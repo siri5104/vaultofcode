@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, georgia;
+            margin: 0;
+            padding: 0;
+            background: url('https://c8.alamy.com/comp/ER564D/3d-renderer-illustration-white-people-writing-registration-on-notebook-ER564D.jpg') center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(230, 225, 232, 0.7); 
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .password-strength {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .password-strength:hover .tooltip {
+            display: block;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .submit-button, .cancel-button {
+            background-color: #383537;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name "email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+            <div class="form-group">
+                <label for="profile-picture">Profile Picture</label>
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+            </div>
+            <div class="form-group">
+                <div class="terms-section">
+                    <h3>Terms & Conditions</h3>
+                
+                
+                    <p>By registering, you agree to our terms and conditions. Please review them carefully before proceeding with your registration.</p>
+                
+
+                    1.By registering, you agree to abide by our terms and conditions.<br>
+                    
+                    2.You are responsible for maintaining the confidentiality of your account information.<br>
+                    
+                    3.Your data will be handled in accordance with our privacy policy.<br>
+                    
+                    4.Respectful and lawful behavior is required on our platform.<br>
+                    
+                    5.We may suspend or terminate your account for violations of our terms.<br>
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        I agree 
+                </label>
+            </div>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="submit-button">Register</button>
+                <button type="button" class="cancel-button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
