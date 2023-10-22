@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Indicator</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Arial;
+            background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-blue-business-atmosphere-information-security-banner-background-picture-image_1105366.jpg'); /* Replace 'your-image-url.jpg' with the URL or file path of your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .password-strength-indicator {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        #password-strength {
+            font-weight: bold;
+        }
+        .weak {
+            color: red;
+        }
+        .medium {
+            color: orange;
+        }
+        .strong {
+            color: green;
+        }
+        
+        .password-strength-change {
+            animation: strengthChange 1s linear;
+        }
+        @keyframes strengthChange {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="password-strength-indicator">
+        <h2>Password Strength Indicator</h2>
+        <input type="password" id="password" placeholder="Enter your password">
+        <div id="password-strength">Strength: <span class="weak">Weak</span></div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const passwordStrength = document.getElementById("password-strength");
+
+        passwordInput.addEventListener("input", () => {
+            const password = passwordInput.value;
+            const strength = checkPasswordStrength(password);
+            updatePasswordStrengthIndicator(strength);
+        });
+
+        function checkPasswordStrength(password) {
+            if (password.length > 8) {
+                return "Strong";
+            } else if (password.length > 6) {
+                return "Medium";
+            } else {
+                return "Weak";
+            }
+        }
+
+        function updatePasswordStrengthIndicator(strength) {
+            passwordStrength.textContent = "Strength: " + strength;
+            passwordStrength.className = `password-strength-change ${strength.toLowerCase()}`;
+        }
+    </script>
+</body>
+</html>
