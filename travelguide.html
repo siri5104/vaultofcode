@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body, h1, h2, ul, li{
+    margin: 0;
+    padding: 10;
+}
+p{
+    font-size: large;
+    font-style: normal;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header {
+    background-color:rgb(243, 243, 250);
+    color:rgb(88, 29, 6);
+    padding: 25px 0;
+    text-align: center;   
+}
+
+    * {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #cbb0e1;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url("https://i.pinimg.com/originals/6c/22/ff/6c22ff23589ceeb2da54d5d21ab8c4d1.png");
+  height: 70%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.overlay h2 {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+}
+.overlay p {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+.body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+ 
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float:left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #7d7fd9;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: orange;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.25em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
+.card2 {
+            display: flex;
+            align-items: center;
+            border: 1px solid #7297ef;
+            padding: 10px;
+            margin: 10px;
+            max-width: 100%;
+        }
+
+        /* Style for the image */
+        .card2 imag {
+            max-width: 100%;
+            max-height: 100%;
+            margin-right: 10px;
+        }
+
+        /* Style for the information on the right */
+        .card2 .info {
+            flex: 1; /* Takes up remaining space */
+        }
+        .destination {
+            display: none;
+        }
+    </style>
+</style>
+
+<html>
+<head>
+    <title>Reservation Confirmation</title>
+    <script>
+        function displayBookingDetails() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var source = document.getElementById("source").value;
+            var destiny = document.getElementById("destiny").value;
+            var checkinDate = document.getElementById("checkin-date").value;
+            var checkoutDate = document.getElementById("checkout-date").value;
+
+            var details = `
+                <h2>Reservation Successful</h2>
+                <p>Thank you, ${name}, for booking your ticket!</p>
+                <p>Your booking details:</p>
+                <ul>
+                    <li>Name: ${name}</li>
+                    <li>Email: ${email}</li>
+                    <li>Phone: ${phone}</li>
+                    <li>Source: ${source}</li>
+                    <li>Destination: ${destiny}</li>
+                    <li>Check-in Date: ${checkinDate}</li>
+                    <li>Check-out Date: ${checkoutDate}</li>
+                </ul>
+            `;
+
+            document.getElementById("booking-details").innerHTML = details;
+        }
+    </script>
+</head>
+<body>
+<header><h1>TRAVEL WITH ME</h1></header>
+
+  
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">places</a>
+  <a href="#contact">Book a Trip</a>
+  <div class="search-container">
+      <form id="search-form" action="search-results.html" method="get">
+          <input type="text" id="search-input" placeholder="Search.." name="query">
+          <button type="submit">Search for a place</button>
+      </form>
+  </div>
+</div>
+  <div id="search-results"></div>
+  <div style="padding-left:16px">
+
+  </div>
+  
+<div class="bg">
+  <div class="overlay">
+    <h2>TRAVEL WITH ME</h2>
+<p>"Travel isn't just about the places you visit; it's about the stories you collect along the way.
+    Join us as we journey through diverse landscapes, cultures, and cuisines, uncovering the magic of the world, one adventure at a time."</p>
+  </div>
+</div>
+<section id="about">
+<br><h2>WANDER</h2>
+<p>"Traveling is a profound journey that transcends mere movement from one place to another.
+    It's about embracing the unknown, immersing yourself in new cultures, and collecting moments that become cherished memories. It's an opportunity to break free from the ordinary, to explore the world's wonders, and to discover the extraordinary in the everyday.
+    Traveling opens our hearts and minds, allowing us to connect with people, places, and experiences that enrich our lives in ways we could never have imagined."</p>
+    <br>
+<div class="responsive">
+  <div class="gallery">
+      <img src="https://i.etsystatic.com/15605743/r/il/28a86e/1355139617/il_570xN.1355139617_5hfg.jpg" alt="Northern Lights" width="600" height="400">
+    </a>
+    <div class="desc"> The heart of the United Kingdom, London is a city of history,
+        royalty, and timeless landmarks. Explore the regal Buckingham Palace,
+        embrace the literary legacy of Shakespeare,
+        and savor classic English tea in this cosmopolitan capital.</div>
+  </div>
+  
+</div>
+<div class="responsive">
+  <div class="gallery">
+      <img src="https://i.pinimg.com/736x/b7/0c/ed/b70ced3f38e42b31b38c231c061f8b0f.jpg" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc">A land of diverse cultures, India captivates with its ancient history and vibrant traditions.
+        From the majestic Taj Mahal to the serene backwaters of Kerala, India offers an enchanting blend of spirituality, flavors,
+        and landscapes.</div>
+  </div>
+</div>
+<div class="responsive">
+    <div class="gallery">
+        <img src="https://img.freepik.com/premium-vector/6114e7b9f0254b879e9df523ef8e5cff1614697645941_523479-168.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Australia, with its stunning landscapes and unique wildlife,
+        is an adventurer's paradise. Dive into the Great Barrier Reef, trek through the Outback,
+        and encounter koalas and kangaroos in this sun-kissed nation.</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://i.pinimg.com/originals/cd/25/87/cd2587efe5a55ed7885f0620783f7d85.png" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">The United States, a vast and diverse nation, is a tapestry of natural wonders,
+        urban excitement, and cultural diversity. From the Grand Canyon's awe-inspiring vistas to New York City's iconic skyline,
+        the USA offers an array of experiences.</div>
+    </div>
+  </div><br>
+  <p>Welcome to "Travel with Me," your gateway to exciting journeys, unforgettable destinations, and inspiring travel stories. Whether you're a seasoned globetrotter or planning your first adventure, this blog is your companion to the world's most captivating places.Join us as we traverse the globe, one destination at a time. From the bustling streets of vibrant cities to the serenity of remote beaches, we'll take you on a visual and narrative journey that will ignite your wanderlust.</p>
+    <p>Our team of avid travelers and storytellers are dedicated to sharing the beauty of the world with you. We believe that every journey is a story waiting to be told, and we're here to help you craft your own unforgettable tales.</p>
+    <p>So, whether you're seeking travel inspiration, practical advice, or simply a taste of the world's wonders, you've come to the right place. Buckle up and get ready to embark on a virtual expedition through the pages of our travel blog. Let's wander, explore, and create memories together."</p><br>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://as1.ftcdn.net/v2/jpg/01/19/81/84/1000_F_119818445_bG1JiuiYomnynFBQPXGxUx4cB8Xg7AHY.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc"> China, a vast nation of contrasts, invites travelers with its iconic Great Wall, magnificent landscapes, and bustling metropolises. Discover the fusion of ancient wisdom and modern innovation in this cultural powerhouse.</div>
+    </div>
+  </div>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://m.media-amazon.com/images/I/71SC++IadqL.AC_UF1000,1000_QL80.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">South Korea, where tradition meets modernity, is a dynamic nation known for its cutting-edge technology and rich heritage. Explore the bustling streets of Seoul, indulge in authentic Korean cuisine, and delve into centuries-old temples.</div>
+    </div>
+  </div>
+  
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://img.freepik.com/free-vector/hand-drawn-japan-poster-template_23-2149818892.jpg" alt="Mountains" width="600" height="400">
+        <div class="desc">Japan, a blend of ancient traditions and futuristic innovations, beckons with its cherry blossoms, sushi delights, and historical wonders. From the tranquil gardens of Kyoto to the bustling streets of Tokyo, Japan is a realm of exquisite harmony</div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+</section>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="card2">
+    <div class="imag">
+        <img src="https://th.bing.com/th/id/OIP.sgpBKBleBHUnMouxyRleyAHaEc?pid=ImgDet&rs=1" alt="Image">
+    </div>
+    <div class="info">
+        <div class="body">
+            <h2><u>BOOK A TRIP</u></h2>
+            <form action="#" method="post">
+                <div class="elem-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
+                </div>
+                <div class="elem-group">
+                    <label for="email">Your E-mail</label>
+                    <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+                </div>
+                <div class="elem-group">
+                    <label for="phone">Your Phone</label>
+                    <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+                </div>
+                <div class="elem-group inlined">
+                    <label for="checkin-date"> Source:</label>
+                    <input type="text" id="source" name="source1" placeholder="guntur" required>
+                </div>
+                <div class="elem-group inlined">
+                    <label for="checkout-date">Destination:</label>
+                    <input type="text" id="destiny" name="destination" placeholder="gujarat" required>
+                </div>
+                <div class="elem-group inlined">
+                    <label for="checkin-date">Check-in Date</label>
+                    <input type="date" id="checkin-date" name="checkin" required>
+                </div>
+                <div class="elem-group inlined">
+                    <label for="checkout-date">Check-out Date</label>
+                    <input type="date" id="checkout-date" name="checkout" required>
+                </div>
+                <button type="button" onclick="displayBookingDetails()"><center>Book Your Ticket</center></button>
+            </form>
+            
+            <div id="booking-details"></div>
+  </div>
+
+<section id="contact">
+    <p><h3>Contact us at: travelwithus@gmail.com / 780832444 / travelwithus.insta</h3></p>
+</section>
+
+
+
+    </body>
+</html>
