@@ -3,7 +3,6 @@
 <head>
     <title>Search Results</title>
     <style>
-        /* Define CSS styles here */
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
@@ -56,19 +55,15 @@
 
     <div id="search-results">
         <div id="results-list">
-            <!-- Search results will be displayed here -->
         </div>
     </div>
 
     <script>
-        // Function to retrieve the search query from the URL
         function getSearchQuery() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             return urlParams.get('query');
         }
-
-        // Function to display search results
         function displaySearchResults() {
             const searchQuery = getSearchQuery();
 
@@ -80,7 +75,7 @@
                                     "https://srhslariat.com/wp-content/uploads/2022/04/IMG-5168-900x675.jpg",
                                     "https://media.nomadicmatt.com/2022/koreaguide2.jpg",
                                      
-                                ] // Image URLs for London
+                                ] 
                     },
                     "London": {
                     description:"London, the heart of the United Kingdom, welcomes history enthusiasts with open arms. The British Museum's vast collection spans centuries and continents, showcasing the world's heritage. In Oxford, the dreaming spires of its ancient universities are an architectural delight. The vibrant East End neighborhoods showcase street art, creativity, and an eclectic mix of cultures. England's green countryside offers picturesque landscapes that inspired famous authors like Jane Austen and the Brontë sisters. London's West End is the epicenter of the theater world, with famous productions and musicals that cater to every taste. Don't forget to take a stroll along the Thames River, where iconic landmarks like the Tower Bridge and the Shard dot the skyline.Dive into London's cultural riches with a visit to the British Museum, home to a treasure trove of artifacts from every corner of the globe. Art aficionados will find their sanctuary in the National Gallery, where timeless masterpieces by artists like Turner, Van Gogh, and Da Vinci adorn the walls.Exploring London's neighborhoods is like navigating a tapestry of diversity. Wander through the bustling streets of Chinatown, where the aroma of dim sum beckons you to quaint eateries. Stroll along Brick Lane, the heart of the East End, where street art lines the walls, and vintage markets buzz with activity. Embrace the creative energy of Shoreditch, known for its avant-garde galleries and trendy cafes.If you're a literature enthusiast, London is a treasure chest of literary history. Pay a visit to the Globe Theatre, a reconstruction of Shakespeare's original playhouse, and lose yourself in the words of the Bard. Take a literary tour through Bloomsbury, where the streets whisper tales of famous authors like Virginia Woolf and Charles Dickens.Beyond its urban landscape, London's countryside is an enchanting realm. The meadows of the Cotswolds, the mystical Stonehenge, and the picturesque Lake District are within reach for day trips. English villages like Bath and Oxford transport you back in time with their stunning architecture.London's allure extends to its green spaces as well. Hyde Park is an oasis in the heart of the city, perfect for leisurely walks or picnics. For panoramic views of the city, climb to the top of The Shard, one of Europe's tallest skyscrapers.",
@@ -138,7 +133,7 @@
                             "https://www.masslive.com/resizer/25TPXLT1kZPKza56Q7BomwHtOVc=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/WXXHIAUYGNDTHPYH6IVDFDHDOQ.jpg"
                         ]
                     },
-                    // Add more locations with descriptions and image URLs
+                   
                 };
 
                 const result = placeData[searchQuery];
@@ -147,7 +142,6 @@
                     const resultsList = document.getElementById('results-list');
                     const resultItem = document.createElement('div');
 
-                    // Create <h2> and <p> elements for the description
                     const heading = document.createElement('h2');
                     heading.textContent = searchQuery;
                     const description = document.createElement('p');
@@ -156,7 +150,7 @@
                     resultItem.appendChild(heading);
                     resultItem.appendChild(description);
 
-                    // Create <img> elements for the images
+                  
                     const imgList = document.createElement('div');
                     result.imageUrls.forEach(function(imageUrl) {
                         const img = document.createElement('img');
@@ -175,7 +169,6 @@
                     resultsList.appendChild(noResultsItem);
                 }
             } else {
-                // Handle the case when there is no search query
                 const resultsList = document.getElementById('results-list');
                 const noResultsItem = document.createElement('p');
                 noResultsItem.textContent = 'No search query provided.';
