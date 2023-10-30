@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        /* Define CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #99b3b5;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #search-results {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgb(218, 225, 228);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #results-list {
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #200223;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Search Results</h1>
+    </header>
+
+    <div id="search-results">
+        <div id="results-list">
+            <!-- Search results will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to retrieve the search query from the URL
+        function getSearchQuery() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get('query');
+        }
+
+        // Function to display search results
+        function displaySearchResults() {
+            const searchQuery = getSearchQuery();
+
+            if (searchQuery) {
+                var placeData = {
+                    "south korea": {
+                        description: "South Korea's cultural heritage thrives in ancient palaces like Gyeongbokgung and the stunning architecture of Bukchon Hanok Village. Seoul is a bustling city where traditional markets like Namdaemun and modern shopping districts like Myeongdong coexist. Hanbok, the traditional attire, adds a touch of nostalgia to special occasions and festivities. The peaceful landscapes of Jeju Island and Seoraksan National Park offer natural escapes for hikers and nature enthusiasts. South Korea's cuisine is a burst of flavors, with spicy kimchi, savory bulgogi, and the soothing samgyetang. Festivals like Chuseok, the harvest festival, and Seollal, the lunar new year, bring communities together in vibrant celebrations.The historic capital, Seoul, is a city where towering skyscrapers coexist with centuries-old palaces, showcasing the perfect fusion of the old and the new. Gyeongbokgung Palace, the grandest of them all, stands as a symbol of the Joseon Dynasty's grandeur, while Bukchon Hanok Village invites you to wander through traditional Korean hanok houses.The bustling streets of Seoul offer a myriad of experiences, from the vibrant street markets of Namdaemun and Myeongdong to the peaceful tranquility of Buddhist temples like Jogyesa. Hanbok, the traditional Korean attire, allows you to immerse yourself in the culture's deep-rooted traditions. During special occasions, wearing this beautiful garment evokes a sense of nostalgia and reverence for South Korea's heritage.For nature enthusiasts, South Korea's landscapes are a paradise. Jeju Island, often referred to as the Island of the Gods, boasts volcanic craters, lush forests, and scenic coastlines. Seoraksan National Park in the east is a haven for hikers and boasts stunning rock formations, waterfalls, and diverse plant life. The cherry blossoms in Jinhae and the vibrant colors of the Boseong Green Tea Plantation create stunning seasonal spectacles.South Korean cuisine is a gastronomic delight, with dishes like spicy kimchi, succulent bulgogi, and the nourishing samgyetang (ginseng chicken soup) tantalizing the taste buds. The country's love for food extends to street markets and food festivals, such as the lively Gwangjang Market and the Boryeong Mud Festival, where culinary adventures abound.South Korea's annual festivals, including Chuseok, the harvest festival, and Seollal, the lunar new year, provide a glimpse into the country's strong sense of community and vibrant celebrations. Witness the age-old customs and rituals that reflect the cultural roots of this dynamic nation. Whether you're exploring the historic alleys of Insa-dong, cheering on your favorite K-Pop group, or hiking the beautiful peaks of South Korea, you'll find a land that bridges the past and the future, creating memories that will last a lifetime.",
+                        imageUrls: ["https://content.r9cdn.net/rimg/dimg/c1/f7/06109851-ctry-132-171a795fe02.jpg?width=1366&height=768&xhint=3330&yhint=2439&crop=true",
+                                    "https://srhslariat.com/wp-content/uploads/2022/04/IMG-5168-900x675.jpg",
+                                    "https://media.nomadicmatt.com/2022/koreaguide2.jpg",
+                                     
+                                ] // Image URLs for London
+                    },
+                    "London": {
+                    description:"London, the heart of the United Kingdom, welcomes history enthusiasts with open arms. The British Museum's vast collection spans centuries and continents, showcasing the world's heritage. In Oxford, the dreaming spires of its ancient universities are an architectural delight. The vibrant East End neighborhoods showcase street art, creativity, and an eclectic mix of cultures. England's green countryside offers picturesque landscapes that inspired famous authors like Jane Austen and the Brontë sisters. London's West End is the epicenter of the theater world, with famous productions and musicals that cater to every taste. Don't forget to take a stroll along the Thames River, where iconic landmarks like the Tower Bridge and the Shard dot the skyline.Dive into London's cultural riches with a visit to the British Museum, home to a treasure trove of artifacts from every corner of the globe. Art aficionados will find their sanctuary in the National Gallery, where timeless masterpieces by artists like Turner, Van Gogh, and Da Vinci adorn the walls.Exploring London's neighborhoods is like navigating a tapestry of diversity. Wander through the bustling streets of Chinatown, where the aroma of dim sum beckons you to quaint eateries. Stroll along Brick Lane, the heart of the East End, where street art lines the walls, and vintage markets buzz with activity. Embrace the creative energy of Shoreditch, known for its avant-garde galleries and trendy cafes.If you're a literature enthusiast, London is a treasure chest of literary history. Pay a visit to the Globe Theatre, a reconstruction of Shakespeare's original playhouse, and lose yourself in the words of the Bard. Take a literary tour through Bloomsbury, where the streets whisper tales of famous authors like Virginia Woolf and Charles Dickens.Beyond its urban landscape, London's countryside is an enchanting realm. The meadows of the Cotswolds, the mystical Stonehenge, and the picturesque Lake District are within reach for day trips. English villages like Bath and Oxford transport you back in time with their stunning architecture.London's allure extends to its green spaces as well. Hyde Park is an oasis in the heart of the city, perfect for leisurely walks or picnics. For panoramic views of the city, climb to the top of The Shard, one of Europe's tallest skyscrapers.",
+                        imageUrls: [
+                            "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/03/10/11/best-london-travel-guides.jpg",
+                            "https://silvertrips.in/wp-content/uploads/2019/05/londan.jpg",
+                            "https://thoth.pickvisa.com/wp-content/uploads/2021/12/05e89f1c665e4ab3b1e1463072a986e0.jpg",
+                            "https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20180402141152/London-skyline-with-Tower-Bridge-during-sunset-1.jpg"
+                        ]
+                    },
+                    "india": {
+                    description:"India, with its vast and diverse landscape, takes you on a journey through history and culture. The Rajasthan deserts offer an otherworldly experience, with palaces like the Udaipur's City Palace rising like mirages. The serene Himalayan landscapes in the north beckon trekkers and spiritual seekers to places like Rishikesh and Dharamshala. In Varanasi, the sacred Ganges River flows with rituals and devotion. India's festivals are grand spectacles, with Holi's vibrant colors and Diwali's sparkling lights illuminating the night sky. The flavors of Indian cuisine vary from state to state; savor spicy curries in Punjab, street food in Mumbai, and dosas in the south. The markets in Jaipur, known for their vibrant textiles and jewelry, are a shopper's paradise.India's diversity extends to its people, cultures, and languages. With over 2,000 distinct ethnic groups and more than 1,600 spoken languages, it's a true melting pot of traditions and customs. Each region offers a unique cultural experience. From the colorful and energetic folk dances of Rajasthan to the classical dance forms of Bharatanatyam in the south, you'll find a rich tapestry of performing arts.India's history is a tapestry of dynasties and empires. Explore ancient forts like the Red Fort in Delhi, built by the Mughals, and the impressive Chittorgarh Fort in Rajasthan. Marvel at the intricately carved temples of Khajuraho, a UNESCO World Heritage Site, known for their stunning erotic sculptures.India's national parks and wildlife sanctuaries are home to diverse and exotic fauna. Take a safari in Ranthambore National Park to spot the majestic Bengal tiger.Visit Kaziranga National Park in Assam to see the Indian one-horned rhinoceros in its natural habitat. India offers exceptional birdwatching opportunities, with sanctuaries like Bharatpur's Keoladeo National Park.India is the birthplace of yoga and a spiritual haven. The ancient city of Rishikesh, located along the banks of the Ganges, is a destination for yoga enthusiasts and seekers of spiritual wisdom. It's where The Beatles famously learned transcendental meditation. Explore ashrams and meditation centers across the country to rejuvenate your mind and body.India boasts architectural wonders like the Sun Temple in Konark, a UNESCO World Heritage Site, famous for its intricate stone carvings. The Brihadeeswarar Temple in Thanjavur, also a UNESCO site, is a masterpiece of Chola architecture. The stepwells of Gujarat, like Rani ki Vav, showcase the country's architectural prowess.ndia's calendar is filled with vibrant festivals. Experience the grandeur of Pushkar's camel fair, the traditional rituals of Thrissur Pooram in Kerala, and the cultural extravaganza of the Kumbh Mela. Each festival is a unique window into India",
+                        imageUrls: [
+                            "https://www.indovacations.net/english/images/NorthIndian-Grouptour78.JPG",
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuNx1jH0Ct96ulurvsUrWE1lUK60dJQB3SdQ&usqp=CAU",
+                            "https://blogger.googleusercontent.com/img/a/AVvXsEi8sR6xSpFnF_FKerN3_sdJ-njTjOgC9lQvAHqeHi4V-i9cGPBS30Jr2WXtktWqvPCorEY-dyQUBP3aLdvj4HrJ8zY47qV71jJtgBDA3Gx_baCILNErhtBQMXoHai_VBuvmBmO9-poqb_86fulHMTSsectP5pajSazwJ8a9BmMCSAoPrzjlUuHJl3-F=s16000",
+                            "https://static.toiimg.com/thumb/msid-93516231,width-748,height-499,resizemode=4,imgsize-79296/.jpg"
+                        ]
+                    },
+
+                    "japan": {
+                    description:"Japan's culture is a tapestry woven with traditional arts like tea ceremonies, calligraphy, and kabuki performances. Kyoto's wooden Machiya houses and iconic geisha culture capture the essence of the past. The bustling streets of Tokyo, with neon lights and futuristic gadgets, give a glimpse into Japan's technological prowess. Mt. Fuji's symmetrical beauty graces postcards and photographs, while Hiroshima's Peace Memorial Park is a somber reminder of the past. Japan's islands offer pristine natural beauty, from Okinawa's coral reefs to Hokkaido's snow-covered landscapes. The cherry blossoms in Ueno Park and the vibrant matsuri (festivals) around the country create a vibrant atmosphere that is truly Japanese. Kyoto is the epicenter of Japan's traditional geisha culture. Witness the grace and artistry of geisha performances and the tea ceremonies held in ochaya (teahouses). Stroll through Gion's historic streets, where you may catch a glimpse of these exquisite entertainers.Japan's gardens are masterpieces of design and tranquility. The Kenroku-en Garden in Kanazawa is renowned for its seasonal beauty. Kinkaku-ji, or the Golden Pavilion, stands as a gleaming testament to architectural artistry amid stunning gardens. Soothe your senses in the natural hot springs known as onsen. Beppu in Kyushu and Kusatsu in Gunma are famous for their healing waters. Enjoy a dip in these geothermal wonders while enveloped by serene landscapes.Soothe your senses in the natural hot springs known as onsen. Beppu in Kyushu and Kusatsu in Gunma are famous for their healing waters. Enjoy a dip in these geothermal wonders while enveloped by serene landscapes.Japan's sakura (cherry blossom) season is a breathtaking sight. Join the hanami (flower-viewing) celebrations in parks like Ueno and Yoshino. The ephemeral beauty of these pink and white blooms is a symbol of renewal.Beyond sushi and ramen, explore the depth of Japanese cuisine. Try kaiseki, a multi-course meal that's a culinary masterpiece. Okonomiyaki, a savory pancake, and takoyaki, octopus balls, are street food delights. Pair your meal with sake, Japan's traditional rice wine.Beyond its photogenic beauty, Mount Fuji is a symbol of Japan's soul. Climb to its summit for a once-in-a-lifetime sunrise view. The Fuji Five Lakes provide an idyllic setting to appreciate its grandeur.The art scene in Japan is vibrant and diverse. Naoshima Island is an art lover's paradise, with contemporary art installations and museums. The iconic Red Pumpkin by Yayoi Kusama is a must-see.",
+                        imageUrls: [
+                            "https://d20aeo683mqd6t.cloudfront.net/articles/title_images/000/027/484/medium/japan-guidebook_3_%281%29.jpg?2020",
+                            "https://blog.dookinternational.com/images/posts/Must-Visit-Places-in-Japan.jpg",
+                            "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000480/img/en/a2000480_main.jpg?20210219225240",
+                            "https://media.cntraveler.com/photos/5a2ffc41a82c263e97bd8db2/16:9/w_2560%2Cc_limit/sakura-GettyImages-638216344.jpg"
+                        ]
+                    },
+                    "china": {
+                    description:"China's ancient history is embodied in its extraordinary landmarks, such as the Terracotta Army in Xi'an and the imposing Forbidden City in Beijing. The Great Wall, a marvel of human engineering, stretches across the northern frontier. Chinese calligraphy and porcelain artistry are showcases of the nation's aesthetic creativity. The traditional art of Chinese medicine, from acupuncture to herbal remedies, finds its roots in ancient practices. Sichuan's spicy hot pot, Beijing's Peking duck, and dim sum in Guangdong are a tantalizing journey through regional cuisines. The culture extends to everyday life, with traditional tea ceremonies, kite flying, and Tai Chi practiced in parks. Modern China's cities are dynamic, with Shanghai's Pudong skyline and Shenzhen's tech innovation hubs leading the way.The iconic Great Wall of China, a UNESCO World Heritage site, is a symbol of China's indomitable spirit. Stretching over 13,000 miles, it winds its way through mountains and valleys, offering panoramic views of the Chinese countryside. A visit to the Forbidden City in Beijing, with its stunning imperial architecture and beautiful courtyards, reveals the opulent history of China's emperors.In the terracotta army of Xi'an, thousands of life-sized soldiers and horses, each with its own distinct facial features, stand guard in the afterlife for China's first emperor, Qin Shi Huang. Chinese calligraphy, an intricate art form, expresses the beauty of the written word with brush and ink.China's diverse regions boast a wide range of culinary traditions. Sichuan's fiery hot pot, with its mouth-numbing Sichuan peppers, is a sensory experience that tests your tolerance for spice. In contrast, Beijing's Peking duck is a culinary masterpiece, with succulent, crispy skin and tender meat.The Chinese tea ceremony, with its delicate tea sets and precise rituals, embodies a serene appreciation of nature and hospitality. Chinese gardens, like the classical Suzhou gardens and the poetic West Lake of Hangzhou, are landscapes of serenity where water, stones, and plants are meticulously arranged to create an idealized version of nature.Modern China's cities, on the other hand, are epicenters of dynamism. Shanghai's Pudong skyline, adorned with futuristic skyscrapers, reflects the nation's rapid development. Shenzhen's tech hubs lead the way in innovation, shaping the future of technology.China's natural beauty is a source of inspiration. The rugged Karst mountains of Guilin, with their limestone peaks shrouded in mist, have been the subject of countless Chinese paintings. The ancient Yellow Mountains of Anhui are known for their pine trees and hot springs, providing a glimpse into China's tranquil landscapes.China's rich cultural traditions are also present in everyday life. The art of kite flying is an age-old pastime, with colorful kites dancing in the sky during festivals. Tai Chi, a graceful martial art, is practiced in parks by people of all ages, promoting physical and mental well-being.",
+                        imageUrls: [
+                            "https://images.chinahighlights.com/allpicture/2021/09/cf92f6ba0a924549bda4d8cf_cut_800x499_238.jpg",
+                            "https://museumofwander.com/wp-content/uploads/2021/02/DSC08750.jpg",
+                            "https://images.summitmedia-digital.com/esquiremagph/images/gallery/6587/MAIN-china-tourist-destination.jpg",
+                            "https://i.pinimg.com/736x/a1/3d/3a/a13d3a05148654b03da346a1506bfc7f.jpg"
+                        ]
+                    },
+                
+                    "Australia": {
+                    description:"Australia's landscapes are a sensory overload, from the ochre plains of the Outback to the ancient rainforests of the Daintree. The reef systems, including the Great Barrier Reef and Ningaloo Reef, are the epitome of marine biodiversity. The Great Ocean Road is a scenic coastal drive offering breathtaking views of limestone stacks known as the Twelve Apostles. Aboriginal culture is the heart of Australia's history, with rock art in Kakadu and ancient stories in Uluru-Kata Tjuta. Sydney's iconic Opera House and Sydney Harbour Bridge are landmarks synonymous with the city's beauty. Australian wildlife is unique, with kangaroos and koalas found nowhere else on the planet. The country's beaches, like Bondi and Whitehaven, are paradise for sun seekers and surfers.The Great Barrier Reef, the world's largest coral reef system, is a marine wonderland that allows travelers to snorkel and dive among breathtaking coral formations, home to a dazzling array of fish and marine life. The pristine beaches along Australia's coastline are some of the world's finest, with Whitehaven Beach in Queensland known for its brilliant white sands that seem to stretch on forever.Australia's love for sports is apparent with events like the Australian Open, Melbourne Cup, and cricket matches that create an electrifying atmosphere. Cuisine is a diverse fusion of flavors, with multicultural influences from Asia, Europe, and the Middle East. Don't miss the chance to savor freshly caught seafood, including Moreton Bay bugs and Tasmanian salmon.The country's vibrant arts scene thrives in cities like Sydney and Melbourne, with world-class museums, galleries, and theaters. The Sydney Opera House is a masterpiece of modern architecture and a UNESCO World Heritage Site. When it comes to adventure, Australia offers opportunities for trekking, camping, and surfing. Discover the rugged landscapes of Kakadu National Park, the Tarkine wilderness, or the Kimberley's ancient gorges.Australia is more than a travel destination; it's a grand adventure that leaves an indelible mark on every traveler who explores its boundless horizons.Australia's landscapes are a sensory overload, from the ochre plains of the Outback to the ancient rainforests of the Daintree. The reef systems, including the Great Barrier Reef and Ningaloo Reef, are the epitome of marine biodiversity. The Great Ocean Road is a scenic coastal drive offering breathtaking views of limestone stacks known as the Twelve Apostles. Aboriginal culture is the heart of Australia's history, with rock art in Kakadu and ancient stories in Uluru-Kata Tjuta. Sydney's iconic Opera House and Sydney Harbour Bridge are landmarks synonymous with the city's beauty. Australian wildlife is unique, with kangaroos and koalas found nowhere else on the planet. The country's beaches, like Bondi and Whitehaven, are paradise for sun seekers and surfers.",
+                        imageUrls: [
+                            "https://e0.pxfuel.com/wallpapers/703/818/desktop-wallpaper-australia-scenery-outback-background-for-your-mobile-tablet-explore-outback-outback-subaru-outback-australian-landscape.jpg",
+                            "https://miro.medium.com/v2/resize:fit:1400/1*W7mjjRqO1ChJxcLKP03lNA.jpg",
+                            "https://cdn-bmalj.nitrocdn.com/uirOOtSrYrqqUksKHkiSCjZGZlPeXsmk/assets/images/optimized/rev-78b5511/theplanetd.com/images/places-to-see-in-australia-twelve-apostles.jpg",
+                            "https://i.pinimg.com/736x/46/83/59/4683598f31356df9aa6b0069df8e5d44.jpg"
+                        ]
+                    },
+                    "USA": {
+                    description:"The United States is a vast tapestry, with each state offering a unique piece of the puzzle. California's coastline is a surfer's dream, while the French Quarter in New Orleans echoes with jazz rhythms. Alaska's wilderness, with glaciers and grizzly bears, provides an escape into pristine nature. The history of the American Revolution comes alive on the cobblestone streets of Boston. The native culture of the Navajo Nation in Arizona is an opportunity to explore ancient traditions. In Washington, D.C., the National Mall stands as a testament to democracy and freedom. From the neon-lit Strip in Las Vegas to the charming streets of Charleston, the USA offers a diverse range of experiences that cater to all interests.In the Pacific Northwest, the emerald beauty of the Pacific Coast offers a refreshing escape. The lush, towering forests of the Olympic National Park and the stunning vistas of Crater Lake in Oregon create havens for nature enthusiasts. Seattle's iconic Space Needle, with its breathtaking views, is a must-visit.Traveling eastward, the Rocky Mountains grace the heart of the continent. Colorado's Aspen and Vail are winter wonderlands for skiers and snowboarders. Summer in Montana's Glacier National Park reveals turquoise lakes and meadows filled with wildflowers. The Wyoming wilderness in Yellowstone National Park is a geothermal wonderland, home to geysers and hot springs.The heart of the United States beats in cities like Chicago, known for its architecture and deep-dish pizza. In New York City, the Statue of Liberty welcomes all to the Big Apple where the Broadway theaters dazzle with musicals, and Central Park provides a serene oasis amidst the urban jungle.The Southern United States boasts a rich tapestry of history and culture. New Orleans' French Quarter is alive with jazz, Creole cuisine, and vibrant street parades. Savannah, Georgia, offers historic charm with its cobblestone streets and oak-shaded parks.The American West is synonymous with wide-open spaces and rugged frontier spirit. The Grand Canyon's awe-inspiring vistas draw adventurers from around the world. The dry, Martian-like landscapes of Utah's national parks, including Zion and Bryce Canyon, are perfect for hikers and photographers.The Florida peninsula presents a different kind of magic in Orlando's theme parks and Miami's vibrant nightlife. The Florida Keys, a string of tropical islands, offer a laid-back atmosphere and world-class snorkeling.Heading to the northeastern part of the country, Boston's Freedom Trail connects historic sites like the Old North Church and the site of the Boston Tea Party. The brilliant colors of New England's fall foliage are a natural spectacle.Lastly, the picturesque landscapes of Hawaii, with its active volcanoes and lush green valleys, form a remote paradise for surfers and sun-seekers.",
+                        imageUrls: [
+                            "https://hips.hearstapps.com/hmg-prod/images/most-beautiful-places-in-the-us-red-rocks-1578088552.jpg",
+                            "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e4585c2b-da03-4e8a-9336-2d16ed4c048c-us_waterfalls_niagara.jpg",
+                            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/34/2d/28/caption.jpg?w=700&h=-1&s=1&cx=662&cy=604&chk=v1_8984ddf3493edfb8c896",
+                            "https://www.masslive.com/resizer/25TPXLT1kZPKza56Q7BomwHtOVc=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/WXXHIAUYGNDTHPYH6IVDFDHDOQ.jpg"
+                        ]
+                    },
+                    // Add more locations with descriptions and image URLs
+                };
+
+                const result = placeData[searchQuery];
+
+                if (result) {
+                    const resultsList = document.getElementById('results-list');
+                    const resultItem = document.createElement('div');
+
+                    // Create <h2> and <p> elements for the description
+                    const heading = document.createElement('h2');
+                    heading.textContent = searchQuery;
+                    const description = document.createElement('p');
+                    description.textContent = result.description;
+
+                    resultItem.appendChild(heading);
+                    resultItem.appendChild(description);
+
+                    // Create <img> elements for the images
+                    const imgList = document.createElement('div');
+                    result.imageUrls.forEach(function(imageUrl) {
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        img.alt = searchQuery;
+                        imgList.appendChild(img);
+                    });
+
+                    resultItem.appendChild(imgList);
+
+                    resultsList.appendChild(resultItem);
+                } else {
+                    const resultsList = document.getElementById('results-list');
+                    const noResultsItem = document.createElement('p');
+                    noResultsItem.textContent = 'Place not found.';
+                    resultsList.appendChild(noResultsItem);
+                }
+            } else {
+                // Handle the case when there is no search query
+                const resultsList = document.getElementById('results-list');
+                const noResultsItem = document.createElement('p');
+                noResultsItem.textContent = 'No search query provided.';
+                resultsList.appendChild(noResultsItem);
+            }
+        }
+        
+
+        // Call the function to display search results when the page loads
+        window.onload = displaySearchResults;
+    </script>
+</body>
+</html>
